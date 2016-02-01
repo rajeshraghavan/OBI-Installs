@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<scheduler>
+<ServerInstance>
+        <!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control--><CLIType>12</CLIType>
+        <!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control--><ClusterPort>9708</ClusterPort>
+        <!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control--><DSN>(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=dbcrpsh2dev-scan)(PORT=1522)))(CONNECT_DATA=(SERVICE_NAME=obicrpxc_srv)))</DSN>
+        
+        <Java_Extension>
+            <!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control--><Java_Host_Server>obi117poc3.qualcomm.com:9810</Java_Host_Server>
+        </Java_Extension>
+        <Mail>
+        <!--
+        NOTE:
+        Values in this element may be automatically updated from the
+        biee-domain.xml file.
+        -->
+            <!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control--><From>obi117poc3</From>
+            <!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control--><SMTP_Port>25</SMTP_Port>
+            <!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control--><SMTP_Server>smtphost.qualcomm.com</SMTP_Server>
+            <!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control--><Sender>obi117poc3@qualcomm.com</Sender>
+
+        <!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control--><Try>1</Try>
+<!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control-->
+<MaxRecipients>0</MaxRecipients>
+<!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control-->
+<UseBcc>true</UseBcc>
+<!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control-->
+<UseSSL>false</UseSSL>
+<!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control-->
+<UseStartTls>false</UseStartTls>
+<!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control-->
+<SmtpCaCertificateVerificationDepth>9</SmtpCaCertificateVerificationDepth>
+</Mail>
+        <MaxExecThreads>100</MaxExecThreads>
+        <MinExecThreads>1</MinExecThreads>
+        <!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control--><PartOfCluster>True</PartOfCluster>
+        <!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control--><PortString>9705</PortString>
+        
+        <ScriptEngine>
+            <!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control--><ScriptRPCPort>9707</ScriptRPCPort>
+        </ScriptEngine>
+        <!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control--><TargetType>57</TargetType>
+        
+        <iBots>
+            <Log_Dir>/local/mnt/obiee/pbi/poc/11_1_1_7/instances/instance1/diagnostics/logs/OracleBISchedulerComponent/coreapplication_obisch1</Log_Dir>
+            <!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control--><Web_Server>obi117poc3.qualcomm.com:9710</Web_Server>
+        </iBots> 
+        
+        
+        <Log>
+            <Level>
+                <!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control--><Error>1</Error>
+                <!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control--><IncidentError>1</IncidentError>
+                <!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control--><Trace>0</Trace>
+                <!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control--><Warning>1</Warning>
+                <!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control--><Notification>1</Notification>
+            </Level>
+            <!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control--><MaximumFileSizeKb>10240</MaximumFileSizeKb>
+            <!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control--><MaximumLogAgeDay>10</MaximumLogAgeDay>
+        </Log>
+        
+        <!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control--><FMWServicesURL>http://10.80.64.77:9704</FMWServicesURL>
+<DefaultScriptPath>/local/mnt/obiee/pbi/poc/11_1_1_7/instances/instance1/bifoundation/OracleBISchedulerComponent/coreapplication_obisch1/scripts/common</DefaultScriptPath>
+      <SchedulerScriptPath>/local/mnt/obiee/pbi/poc/11_1_1_7/instances/instance1/bifoundation/OracleBISchedulerComponent/coreapplication_obisch1/scripts/scheduler</SchedulerScriptPath>
+      <TempPath>/local/mnt/obiee/pbi/poc/11_1_1_7/instances/instance1/tmp/OracleBISchedulerComponent/coreapplication_obisch1</TempPath>
+      <SSL>
+         <CACertificateDir>/local/mnt/obiee/pbi/poc/11_1_1_7/instances/instance1/config/OracleBISchedulerComponent/coreapplication_obisch1</CACertificateDir>
+         <CertPrivateKeyFileName>/local/mnt/obiee/pbi/poc/11_1_1_7/instances/instance1/config/OracleBISchedulerComponent/coreapplication_obisch1/private.pem</CertPrivateKeyFileName>
+         <CertificateFileName>/local/mnt/obiee/pbi/poc/11_1_1_7/instances/instance1/config/OracleBISchedulerComponent/coreapplication_obisch1/public.pem</CertificateFileName>
+         <PassphraseFileName>/local/mnt/obiee/pbi/poc/11_1_1_7/instances/instance1/config/OracleBISchedulerComponent/coreapplication_obisch1/passphrase</PassphraseFileName>
+      <!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control--><UseSSL>false</UseSSL>
+</SSL>
+      <!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control--><OC4JActionExecutionPort>http://10.80.64.77:9704/analytics/actions/ActionExecutionService</OC4JActionExecutionPort>
+   </ServerInstance>
+</scheduler>

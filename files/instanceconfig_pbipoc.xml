@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Oracle Business Intelligence Presentation Services Configuration File Managed by puppet -->
+<WebConfig xmlns="oracle.bi.presentation.services/config/v1.1">
+   <ServerInstance>
+
+      <!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control--><CatalogPath>/local/mnt/obiee/pbi/poc/11_1_1_7/instances/instance1/bifoundation/OracleBIPresentationServicesComponent/coreapplication_obips1/catalog/SampleAppLite</CatalogPath>
+
+      <DSN>AnalyticsWeb</DSN>
+
+      <Logging>
+
+         <Writers>
+            <!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control--><Writer implementation="FileLogWriter" name="Global File Logger" writerClassId="1" dir="{%ORACLE_BIPS_INSTANCE_LOGDIR%}" filePrefix="sawlog" maxFileSizeKb="10240" filesN="10" fmtName="ODL-Text"/> 
+            <!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control--><Writer implementation="CoutWriter" name="Console Logger" writerClassId="2" maxFileSizeKb="10240"/>
+            <!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control--><Writer implementation="EventLogWriter" name="System Event Logger" writerClassId="3" maxFileSizeKb="10240"/>
+            <!--  The following writer is not centrally controlled --> 
+            <Writer implementation="FileLogWriter" name="Webcat Upgrade Logger" disableCentralControl="true" writerClassId="5" dir="{%ORACLE_BIPS_INSTANCE_LOGDIR%}" filePrefix="webcatupgrade" maxFileSizeKb="2147483647" filesN="1" fmtName="ODL-Text"/>
+         </Writers>
+
+         <WriterClassGroups>
+            <WriterClassGroup name="All">1,2,3,5,6</WriterClassGroup>
+            <WriterClassGroup name="File">1</WriterClassGroup>
+            <WriterClassGroup name="Console">2</WriterClassGroup>
+            <WriterClassGroup name="EventLog">3</WriterClassGroup>
+            <WriterClassGroup name="UpgradeLogFile">5</WriterClassGroup>
+         </WriterClassGroups>
+
+         <Filters>           
+            <!--  These FilterRecords are updated by centrally controlled configuration -->
+            <!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control--><FilterRecord writerClassGroup="File" path="saw" information="1" warning="31" error="31" trace="0" incident_error="1"/>
+            <!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control--><FilterRecord writerClassGroup="File" path="saw.mktgsqlsubsystem.joblog" information="1" warning="31" error="31" trace="0" incident_error="1"/>
+            
+            <!--  The following FilterRecords are not centrally controlled -->
+            <FilterRecord writerClassGroup="UpgradeLogFile" disableCentralControl="true" path="saw.subsystem.catalog.initialize.upgrade" information="1" warning="32" error="32" trace="1" incident_error="32"/>
+            <FilterRecord writerClassGroup="UpgradeLogFile" disableCentralControl="true" path="saw.subsystem.catalog.upgrade" information="1" warning="32" error="32" trace="1" incident_error="32"/>            
+         </Filters>
+
+      </Logging>
+
+      <!-- Placeholder Views node for later automated processing. -->
+      <Views>
+      <Pivot>
+<!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control-->
+<DefaultRowsDisplayedInDelivery>75</DefaultRowsDisplayedInDelivery>
+<!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control-->
+<DefaultRowsDisplayedInDownload>2500</DefaultRowsDisplayedInDownload>
+<!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control-->
+<DisableAutoPreview>false</DisableAutoPreview>
+</Pivot>
+<Table>
+<!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control-->
+<DefaultRowsDisplayedInDelivery>75</DefaultRowsDisplayedInDelivery>
+<!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control-->
+<DefaultRowsDisplayedInDownload>2500</DefaultRowsDisplayedInDownload>
+</Table>
+</Views>
+     
+   <Catalog>
+         <UpgradeAndExit>false</UpgradeAndExit>
+      </Catalog>
+      <!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control--><Listener port="9710" ssl="false"/>
+      <!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control--><JavaHostProxy ssl="false">
+         <Hosts>
+            <!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control--><Host name="coreapplication_obijh1" address="obi117poc3.qualcomm.com" port="9810"/>
+         </Hosts>
+      </JavaHostProxy>
+      <Alerts>
+         <!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control--><ScheduleServer ssl="false" ccsPrimary="obi117poc3.qualcomm.com" ccsPrimaryPort="9706"/>
+         <!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control--><OfflinePresentationServicesURL>http://10.80.64.77:9704/analytics/saw.dll</OfflinePresentationServicesURL>
+      </Alerts>
+      <ActionFramework>
+         <!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control--><ActionExecutionServiceEndPoint>http://10.80.64.77:9704/analytics/actions/ActionExecutionService</ActionExecutionServiceEndPoint>
+         <!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control--><TargetBrowsingServiceEndPoint>http://10.80.64.77:9704/analytics/actions/ActionRegistryService</TargetBrowsingServiceEndPoint>
+         <!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control--><LocationServiceEndPoint>http://10.80.64.77:9704/analytics/actions/LocationService</LocationServiceEndPoint>
+         <!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control--><WorkflowServer>http://10.80.64.77:9704</WorkflowServer>
+         <WorkflowService>ANALYTICS</WorkflowService>
+         <WorkflowSystem>obiaftests</WorkflowSystem>
+      </ActionFramework>
+   <Security>
+<!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control-->
+<ClientSessionExpireMinutes>210</ClientSessionExpireMinutes>
+</Security>
+<ODBC>
+<!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control-->
+<ResultRowLimit>65000</ResultRowLimit>
+</ODBC>
+<!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control-->
+<OracleHardwareAcceleration>false</OracleHardwareAcceleration>
+<Dashboard>
+<!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control-->
+<ShowPageTabsAlways>false</ShowPageTabsAlways>
+<!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control-->
+<ShowSectionHeadingsDefault>false</ShowSectionHeadingsDefault>
+<!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control-->
+<CollapsibleSectionsDefault>true</CollapsibleSectionsDefault>
+</Dashboard>
+<BIComposer>
+<!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control-->
+<Enabled>true</Enabled>
+</BIComposer>
+<DeploymentProfile>
+<!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control-->
+<DeploymentMode>onsite</DeploymentMode>
+</DeploymentProfile>
+<AsyncLogon>
+<!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control-->
+<NewLogonWaitSeconds>30</NewLogonWaitSeconds>
+<!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control-->
+<NewSyncLogonWaitSeconds>900</NewSyncLogonWaitSeconds>
+</AsyncLogon>
+<Marketing>
+<ContentServer>
+<!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control-->
+<URL>http://localhost:8765</URL>
+</ContentServer>
+</Marketing>
+<Authentication>
+<!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control-->
+<EnabledSchemas>UidPwd,Impersonate,UidPwd-soap,Impersonate-soap</EnabledSchemas>
+</Authentication>
+</ServerInstance>
+</WebConfig>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<JavaHost>
+   <!--Loaders section is moved to loaders.xml in bifoundation/javahost/config -->
+   <!-- Common configuration keys for all functional areas (such as Charts,PDF,UrlConnect, e.t.c) -->
+   <!--   
+   InputStreamLimitInKB
+   RequestResponseLogDirectory
+   LogLargeRequests
+   ReadRequestBeforeProcessing
+   LargeRequestTreshholdInKB
+   -->
+   
+   <MessageProcessor>
+      <!-- How much time worker thread should wait for a message before returning socket to the "idle" pool.
+           Initial messages in the  idle pool are handled using Java NIO Channels. -->
+      <!--<SocketTimeout>5000</SocketTimeout> -->
+   </MessageProcessor>
+
+   <Listener>
+      <!-- Comma spearated listed of permitted clients. Set this value to "*" to allow all clients. -->
+      <!-- <PermittedClientList>127.0.0.1</PermittedClientList> -->
+
+      <!-- Javahost  TCP/IP connection port -->
+      <!-- <Port>9810</Port> -->
+
+      <!-- Network interface Javahost should bind to. By default when this setting is skipped Javahost will bind
+           to all available network interfaces. -->
+      <!--  <Address/> -->
+
+      <!-- Enables/disables SSL communications -->
+      <!-- <Secure>No</Secure> -->
+      
+      <SSL>
+
+         <!-- Alias for the certificate/key pair from certificate store which would identify javahost in SSL communication. -->
+         <!-- <CertAlias>javahost</CertAlias> -->
+
+         <!-- Path to the key store file which contains certificate/key pair which is identified by CertAlias
+              Default:  value of java system property javax.net.ssl.keyStore -->
+         <!-- <CertStoreFile/> -->
+
+         <!-- Password which may be required to access Certificate database identified by CertStoreFile parameter
+              Default: value of value of java system property "javax.net.ssl.keyStorePassword" -->
+         <!-- <CertStorePwd/> -->
+
+         <!-- Password which may be required to access the certificate/key identified by CertAlias parameter.
+              Default: the same as the value of "CertStorePwd" -->
+         <!-- <KeyPwd/> -->
+
+         <!-- Store type of the key store identified by CertStoreFile parameter.
+              Default: JKS -->
+         <!-- <CertStoreType>JKS</CertStoreType> -->
+
+         <!-- Path to the key store database file which contains certificates of trusted Certificated Authorities.
+              All certificates contained in this file would be regarded as certificates of trusted CAs. 
+              Default: value of value of java system property "javax.net.ssl.trustStore" -->
+         <!-- <TrustStoreFile/> -->
+
+         <!-- Password which may be required to access certificate database identified by TrustStoreFile parameter
+              Default: -->
+         <!-- <TrustStorePwd/> -->
+
+         <!-- Store type of the key store identified by TrustStoreFile parameter.
+              Default: JKS -->         
+         <!-- <TrustStoreType/> -->
+
+         <!-- Semicolon separated list of DNs that current party will trust.
+              To be trusted each certificate should be ultimately signed by trusted CA
+              (that is it's signing chain should contain one of trusted CA certificates).
+              If not set any certificate chain which contains one of trusted CAs will be accepted. -->
+         <!--
+         <TrustesPeersDNs>
+               CN=sawserver2, OU=Department, O=Organization, L=City, ST=State, C=Country ;
+               CN=sawserver1, OU=Department, O=Organization, L=City, ST=State, C=Country ;
+               CN=sawserver,  OU=Department, O=Organization, L=City, ST=State, C=Country
+            </TrustesPeersDNs>
+         -->
+         
+         <!-- If set to 'Y' the validity of other party credentials wouldn't be verified. -->
+         <!-- <TrustAnyPeer/> -->
+
+         <!-- List of ciphers suites (space separated) to be used in secure communication. -->
+         <!-- <EnabledCipherSuites/> -->
+
+      </SSL>
+
+   <!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control--><Port>9810</Port>
+   <!--This Configuration setting is managed by Oracle Enterprise Manager Fusion Middleware Control--><Secure>false</Secure>
+</Listener>
+
+   <Batik/>
+
+   <Scheduler>
+      <!-- Enabled the feature or not, by default feature is not enabled. -->
+      <Enabled>False</Enabled>
+      <!-- Required field, default location for user to put their Java extension, utility jar files. -->
+      <DefaultUserJarFilePath>default</DefaultUserJarFilePath>
+
+      <!-- Default temp file location for Scheduler RPC calls, by default is at system temp directory -->
+      <!-- <DefaultTempFilePath/> -->
+
+      <!-- Default purging period for Scheduler RPC calls to clean up failed jobs, by default is 300 seconds -->
+      <!-- <DefaultPurgingPeriod/> -->
+   </Scheduler>
+
+   <XMLP>
+      <InputStreamLimitInKB>8192</InputStreamLimitInKB>
+      <ReadRequestBeforeProcessing>true</ReadRequestBeforeProcessing>
+   </XMLP>
+
+   <UrlConnect>
+      <!-- May conatin <SSL> element which configures SSL parameters
+      for HTTPS requests. For details see comments in Listener/SSL node.
+      -->
+   </UrlConnect>
+
+   <Mapviewer>
+      <!--
+      <Address></Address>
+      <Port></Port>
+      -->
+   </Mapviewer>
+
+   <DVT>
+      <InputStreamLimitInKB>8192</InputStreamLimitInKB>
+   </DVT>
+
+</JavaHost>
